@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Tab</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="grain"></div>
+
+    <main class="main">
+        <section class="time-section">
+            <div class="time-container">
+                <time id="current-time" class="current-time">
+                    <span class="time-part hours" id="hours">00</span>
+                    <span class="time-sep">:</span>
+                    <span class="time-part minutes" id="minutes">00</span>
+                    <span class="time-sep">:</span>
+                    <span class="time-part seconds" id="seconds">00</span>
+                </time>
+                <div id="date-info" class="date-info">Loading...</div>
+            </div>
+        </section>
+
+        <section class="search-section">
+            <form class="search-form" id="search-form">
+                <div class="search-box" id="search-box">
+                    <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round">
+                        <circle cx="11" cy="11" r="8" />
+                        <path d="M21 21l-4.35-4.35" />
+                    </svg>
+                    <input type="text" id="search-input" class="search-input" placeholder="Google'da qidirish"
+                        autocomplete="off" spellcheck="false">
+                    <div class="search-actions">
+                        <button type="button" class="search-action-btn" id="clear-btn" style="display: none;">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="18" y1="6" x2="6" y2="18" />
+                                <line x1="6" y1="6" x2="18" y2="18" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="search-suggestions" id="suggestions" style="display: none;">
+                </div>
+            </form>
+        </section>
+
+        <section class="progress-section">
+            <article class="progress-card">
+                <header class="progress-header">
+                    <h3 class="progress-label">KUN</h3>
+                    <data id="day-percent" class="progress-percent">0.0000%</data>
+                </header>
+                <div class="progress-track">
+                    <div id="day-fill" class="progress-fill" style="width: 0%"></div>
+                </div>
+                <footer class="progress-footer">
+                    <span id="day-elapsed" class="progress-detail">—</span>
+                    <span id="day-remaining" class="progress-detail">—</span>
+                </footer>
+            </article>
+
+            <article class="progress-card">
+                <header class="progress-header">
+                    <h3 class="progress-label">OY</h3>
+                    <data id="month-percent" class="progress-percent">0.000000%</data>
+                </header>
+                <div class="progress-track">
+                    <div id="month-fill" class="progress-fill" style="width: 0%"></div>
+                </div>
+                <footer class="progress-footer">
+                    <span id="month-elapsed" class="progress-detail">—</span>
+                    <span id="month-remaining" class="progress-detail">—</span>
+                </footer>
+            </article>
+
+            <article class="progress-card">
+                <header class="progress-header">
+                    <h3 class="progress-label">YIL</h3>
+                    <data id="year-percent" class="progress-percent">0.0000000%</data>
+                </header>
+                <div class="progress-track">
+                    <div id="year-fill" class="progress-fill" style="width: 0%"></div>
+                </div>
+                <footer class="progress-footer">
+                    <span id="year-elapsed" class="progress-detail">—</span>
+                    <span id="year-remaining" class="progress-detail">—</span>
+                </footer>
+            </article>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

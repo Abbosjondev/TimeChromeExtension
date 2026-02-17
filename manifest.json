@@ -1,0 +1,10 @@
+{
+  "manifest_version": 3,
+  "name": "Time Progress",
+  "version": "2.0",
+  "description": "Time - real-time progress tracker",
+  "chrome_url_overrides": {
+    "newtab": "newtab.html"
+  },
+  "permissions": []
+}
