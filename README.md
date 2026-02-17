@@ -1,3 +1,5 @@
+![Screenshot](image.png)
+
 # Time Progress - Chrome Extension
 
 Psychology-based vaqt progress tracker.
