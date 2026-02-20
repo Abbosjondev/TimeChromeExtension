@@ -4,6 +4,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    touch-action: none;
 }
 
 :root {
@@ -14,14 +19,14 @@
     --text-tertiary: #606060;
     --border: #2a2a2a;
     --accent: #ffffff;
-    
+
     --space-xs: 0.5rem;
     --space-sm: 0.75rem;
     --space-md: 1rem;
     --space-lg: 1.5rem;
     --space-xl: 2rem;
     --space-2xl: 3rem;
-    
+
     --font-mono: 'JetBrains Mono', 'Courier New', monospace;
     --font-display: 'Space Grotesk', -apple-system, sans-serif;
 }
@@ -31,6 +36,7 @@ html {
 }
 
 body {
+    pointer-events: none;
     font-family: var(--font-mono);
     background-color: var(--bg);
     color: var(--text-primary);
@@ -98,9 +104,17 @@ body {
 }
 
 @keyframes digitChange {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.01); }
-    100% { transform: scale(1); }
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.01);
+    }
+
+    100% {
+        transform: scale(1);
+    }
 }
 
 .time-sep {
@@ -110,8 +124,15 @@ body {
 }
 
 @keyframes blink {
-    0%, 100% { opacity: 0.5; }
-    50% { opacity: 0.2; }
+
+    0%,
+    100% {
+        opacity: 0.5;
+    }
+
+    50% {
+        opacity: 0.2;
+    }
 }
 
 .date-info {
@@ -168,6 +189,8 @@ body {
     font-size: 1rem;
     color: var(--text-primary);
     font-weight: 400;
+    pointer-events: auto;
+    user-select: text;
 }
 
 .search-input::placeholder {
@@ -314,8 +337,13 @@ body {
 }
 
 @keyframes shimmer {
-    0% { left: -100%; }
-    100% { left: 200%; }
+    0% {
+        left: -100%;
+    }
+
+    100% {
+        left: 200%;
+    }
 }
 
 .progress-footer {
@@ -330,7 +358,7 @@ body {
     .main {
         padding: clamp(1.5rem, 3vh, 2.5rem) clamp(1.5rem, 4vw, 3rem);
     }
-    
+
     .current-time {
         font-size: clamp(3rem, 10vw, 6rem);
     }
@@ -341,15 +369,15 @@ body {
         grid-template-columns: 1fr;
         gap: var(--space-md);
     }
-    
+
     .time-section {
         margin-bottom: var(--space-xl);
     }
-    
+
     .search-section {
         margin-top: var(--space-md);
     }
-    
+
     .search-box {
         height: 44px;
     }
@@ -360,6 +388,7 @@ body {
         opacity: 0;
         transform: translateY(20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
